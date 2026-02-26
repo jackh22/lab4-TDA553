@@ -1,0 +1,91 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15" version="29.5.5">
+  <diagram id="mvcImproved01" name="MVC Improved">
+    <mxGraphModel dx="1676" dy="921" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="app" parent="1" style="shape=umlClass;whiteSpace=wrap;html=1;" value="&lt;b&gt;App&lt;/b&gt;&lt;hr/&gt;+main(args): void" vertex="1">
+          <mxGeometry height="90" width="220" x="80" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="controller" parent="1" style="shape=umlClass;whiteSpace=wrap;html=1;" value="&lt;b&gt;CarController&lt;/b&gt;&lt;hr&gt;-model: CarModel&lt;br&gt;-view: CarView&lt;br&gt;-timer: Timer&lt;hr&gt;+onGas(amount): void&lt;br&gt;+onBrake(amount): void&lt;br&gt;+onTurboOn(): void&lt;br&gt;+onTurboOff(): void&lt;br&gt;+onLiftBed(): void&lt;br&gt;+onLowerBed(): void&lt;br&gt;+onStartAll(): void&lt;br&gt;+onStopAll(): void&lt;br&gt;+tick(): void" vertex="1">
+          <mxGeometry height="250" width="360" x="360" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="model" parent="1" style="shape=umlClass;whiteSpace=wrap;html=1;" value="&lt;b&gt;LogicModel&lt;/b&gt;&lt;hr&gt;-cars: List&lt;br&gt;-volvoWorkshop: WorkShop&lt;hr&gt;+gasAll(amount): void&lt;br&gt;+brakeAll(amount): void&lt;br&gt;+startAll(): void&lt;br&gt;+stopAll(): void&lt;br&gt;+setTurbo(on): void&lt;br&gt;+setScaniaBed(delta): void&lt;br&gt;+tick(): void&lt;br&gt;+getSnapshot(): SimulationState" vertex="1">
+          <mxGeometry height="250" width="360" x="780" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="view" parent="1" style="shape=umlClass;whiteSpace=wrap;html=1;" value="&lt;b&gt;CarView&lt;/b&gt;&lt;hr/&gt;+bind(controller): void&lt;br/&gt;+render(state): void&lt;br/&gt;+onGas(handler): void&lt;br/&gt;+onBrake(handler): void" vertex="1">
+          <mxGeometry height="170" width="320" x="360" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="drawPanel" parent="1" style="shape=umlClass;whiteSpace=wrap;html=1;" value="&lt;b&gt;DrawPanel&lt;/b&gt;&lt;hr/&gt;+renderCars(cars): void&lt;br/&gt;+renderWorkshop(workshop): void" vertex="1">
+          <mxGeometry height="140" width="300" x="730" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="simState" parent="1" style="shape=umlClass;whiteSpace=wrap;html=1;" value="&lt;b&gt;UserCarList&lt;/b&gt;&lt;hr&gt;+cars: List&lt;br&gt;+workshop: WorkShopState" vertex="1">
+          <mxGeometry height="120" width="280" x="1160" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="carState" parent="1" style="shape=umlClass;whiteSpace=wrap;html=1;" value="&lt;b&gt;UserCar&lt;/b&gt;&lt;br&gt;&lt;hr&gt;+x: double&lt;br&gt;+y: double&lt;br&gt;+type: String&lt;br&gt;+direction: String" vertex="1">
+          <mxGeometry height="140" width="280" x="1160" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="car" parent="1" style="shape=umlClass;whiteSpace=wrap;html=1;" value="&lt;b&gt;Car&lt;/b&gt;&lt;hr/&gt;+move(): void&lt;br/&gt;+turnLeft(): void&lt;br/&gt;+turnRight(): void&lt;br/&gt;+gas(amount): void&lt;br/&gt;+brake(amount): void" vertex="1">
+          <mxGeometry height="170" width="240" x="80" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="saab" parent="1" style="shape=umlClass;whiteSpace=wrap;html=1;" value="&lt;b&gt;Saab95&lt;/b&gt;" vertex="1">
+          <mxGeometry height="70" width="180" x="360" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="volvo" parent="1" style="shape=umlClass;whiteSpace=wrap;html=1;" value="&lt;b&gt;Volvo240&lt;/b&gt;" vertex="1">
+          <mxGeometry height="70" width="180" x="360" y="690" as="geometry" />
+        </mxCell>
+        <mxCell id="scania" parent="1" style="shape=umlClass;whiteSpace=wrap;html=1;" value="&lt;b&gt;Scania&lt;/b&gt;" vertex="1">
+          <mxGeometry height="70" width="180" x="560" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="transport" parent="1" style="shape=umlClass;whiteSpace=wrap;html=1;" value="&lt;b&gt;CarTransport&lt;/b&gt;" vertex="1">
+          <mxGeometry height="70" width="180" x="560" y="690" as="geometry" />
+        </mxCell>
+        <mxCell id="workshop" parent="1" style="shape=umlClass;whiteSpace=wrap;html=1;" value="&lt;b&gt;WorkShop&lt;Volvo240&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="260" x="780" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="app" style="endArrow=open;dashed=1;html=1;" target="controller" value="creates">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="app" style="endArrow=open;dashed=1;html=1;" target="model" value="creates">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="app" style="endArrow=open;dashed=1;html=1;" target="view" value="creates">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="controller" style="endArrow=block;html=1;" target="model" value="uses">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="controller" style="endArrow=block;html=1;" target="view" value="updates">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="view" style="endArrow=diamondThin;endFill=1;html=1;" target="drawPanel" value="contains">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="model" style="endArrow=open;dashed=1;html=1;" target="simState" value="snapshot">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="simState" style="endArrow=diamondThin;endFill=1;html=1;" target="carState" value="cars">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="model" style="endArrow=block;html=1;" target="car" value="manages">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="model" style="endArrow=block;html=1;" target="workshop" value="has">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="saab" style="endArrow=block;endFill=0;startArrow=none;html=1;" target="car" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="volvo" style="endArrow=block;endFill=0;startArrow=none;html=1;" target="car" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="scania" style="endArrow=block;endFill=0;startArrow=none;html=1;" target="car" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" edge="1" parent="1" source="transport" style="endArrow=block;endFill=0;startArrow=none;html=1;" target="car" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
