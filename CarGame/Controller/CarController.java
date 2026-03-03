@@ -105,7 +105,7 @@ public class CarController {
                 newCar.turnRight();
                 newCar.setyPos(offset);
                 cars.add(newCar);
-                //notifyObservers();
+                notifyObservers();
             }
         }
 
