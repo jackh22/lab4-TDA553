@@ -121,63 +121,37 @@ public class CarView extends JFrame {
         turboOnButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                for (Car car : carC.cars) {
-                    if (car instanceof Saab95) {
-                        ((Saab95) car).setTurboOn();
-                    }
-                }
+                carC.setTurboOn();
             }
         });
         turboOffButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                for (Car car : carC.cars) {
-                    if (car instanceof Saab95) {
-                        ((Saab95) car).setTurboOff();
-                    }
-                }
+                carC.setTurboOff();
             }
         });
         lowerBedButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                for (Car car : carC.cars) {
-                    if (car instanceof Scania) {
-                        ((Scania) car).incAngle(1);
-                        System.out.println(((Scania) car).getAngle());
-                    } else if (car instanceof CarTransport) {
-                        ((CarTransport) car).lowerRamp();
-                    }
-
-                }
+                carC.lowerBed();
             }
         });
         liftBedButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                for (Car car : carC.cars) {
-                    if (car instanceof Scania) {
-                        ((Scania) car).decAngle(1);
-                    } else if (car instanceof CarTransport) {
-                        ((CarTransport) car).raiseRamp();
-                    }
-                }
+                carC.liftBed();
             }
         });
         startButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                for (Car car : carC.cars) {
-                    car.startEngine();
-                }
+                carC.startAll();
             }
         });
         stopButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                for (Car car : carC.cars) {
-                    car.stopEngine();
-                }
+                carC.stopAll();
             }
         });
         // Make the frame pack all it's components by respecting the sizes if possible.
