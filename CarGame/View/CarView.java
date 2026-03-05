@@ -26,7 +26,7 @@ public class CarView extends JFrame {
     CarController carC;
 
 
-    public DrawPanel drawPanel = new DrawPanel(X, Y - 240);
+    public DrawPanel drawPanel;
 
     JPanel controlPanel = new JPanel();
 
