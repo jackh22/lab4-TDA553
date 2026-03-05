@@ -13,7 +13,9 @@ import javax.swing.*;
 public class DrawPanel extends JPanel implements ModelObserver{
     ArrayList<Car> cars = new ArrayList<>();
     WorkShop<Volvo240> volvoWorkshop = new WorkShop<>();
-    DrawPanel(int x, int y, ArrayList<Car> cars, WorkShop<Volvo240> volvoWorkshop){
+    private CarModel model;
+    DrawPanel(int x, int y, CarModel model){
+        this.model = model;
         this.setDoubleBuffered(true);
         this.setPreferredSize(new Dimension(x, y));
         this.setBackground(Color.green);
@@ -76,7 +78,7 @@ public class DrawPanel extends JPanel implements ModelObserver{
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        for (Car car:cars){
+        for (Car car: model.getCars()){
             if (car instanceof Volvo240) {
                 g.drawImage(volvoImage, (int)car.getX(), (int)car.getY(), null);
             }
@@ -91,7 +93,7 @@ public class DrawPanel extends JPanel implements ModelObserver{
 
 
         //g.drawImage(volvoImage, volvoPoint.x, volvoPoint.y, null); // see javadoc for more info on the parameters
-        g.drawImage(volvoWorkshopImage, (int) volvoWorkshop.getX(), (int) volvoWorkshop.getY(), null);
+        g.drawImage(volvoWorkshopImage, (int) model.getVolvoWorkshop().getX(), (int) model.getVolvoWorkshop().getY(), null);
     }
     @Override
     public void modelUpdated(){

@@ -1,15 +1,18 @@
 package CarGame;
 
 import CarGame.Controller.CarController;
+import CarGame.Controller.TimerListener;
+import CarGame.Model.CarModel;
 import CarGame.View.*;
-import CarGame.Model.*;
+
 import javax.swing.Timer;
 
 public class CarGameMain {
-
     public static void main(String[] args) {
-        CarController cc = new CarController();
-        cc.frame = new CarView("CarSim 1.0", cc);
+        CarModel cm = new CarModel();
+        CarController cc = new CarController(cm);
+        CarView frame = new CarView("CarSim 1.0", cc);
+        cm.addObserver(frame.drawPanel);
         Timer timer = new Timer(50, new TimerListener(cc));
         timer.start();
     }
