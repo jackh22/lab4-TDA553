@@ -12,9 +12,6 @@ public class CarController {
         this.model = model;
     }
 
-    // =========================
-    // View → Controller → Model
-    // =========================
 
     public void gas(int amount) {
         double gas = amount / 100.0;

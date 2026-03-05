@@ -22,9 +22,7 @@ public class CarModel {
         }
     }
 
-    // =========================
-    // Getters
-    // =========================
+
 
     public List<Car> getCars() {
         return cars;
@@ -34,9 +32,7 @@ public class CarModel {
         return volvoWorkshop;
     }
 
-    // =========================
-    // Car controls
-    // =========================
+
 
     public void gasAll(double amount) {
         for (Car car : cars) {
@@ -108,9 +104,6 @@ public class CarModel {
         notifyObservers();
     }
 
-    // =========================
-    // Add / Remove cars
-    // =========================
 
     public void addCar() {
         int maxCars = 5;
@@ -134,10 +127,6 @@ public class CarModel {
         }
         notifyObservers();
     }
-
-    // =========================
-    // Game update (flyttad från TimerListener)
-    // =========================
 
     public void update() {
 
